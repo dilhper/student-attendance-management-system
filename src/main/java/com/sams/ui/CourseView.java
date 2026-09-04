@@ -145,7 +145,7 @@ public class CourseView {
 
         DialogPane pane = dialog.getDialogPane();
         pane.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
-        pane.setStyle("-fx-background-color: #1a1a2e;");
+        pane.setStyle("-fx-background-color: #1E293B;");
         pane.getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
 
         GridPane grid = new GridPane();
@@ -207,7 +207,7 @@ public class CourseView {
 
         DialogPane pane = dialog.getDialogPane();
         pane.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
-        pane.setStyle("-fx-background-color: #1a1a2e;");
+        pane.setStyle("-fx-background-color: #1E293B;");
         pane.getButtonTypes().add(ButtonType.CLOSE);
         pane.setPrefWidth(600);
         pane.setPrefHeight(450);
@@ -273,7 +273,7 @@ public class CourseView {
         dlg.setTitle(existing == null ? "Add Subject" : "Edit Subject");
         DialogPane dp = dlg.getDialogPane();
         dp.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
-        dp.setStyle("-fx-background-color: #1a1a2e;");
+        dp.setStyle("-fx-background-color: #1E293B;");
         dp.getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
 
         GridPane g = new GridPane();

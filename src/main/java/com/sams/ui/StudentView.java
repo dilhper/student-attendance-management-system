@@ -167,7 +167,7 @@ public class StudentView {
 
         DialogPane pane = dialog.getDialogPane();
         pane.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
-        pane.setStyle("-fx-background-color: #1a1a2e;");
+        pane.setStyle("-fx-background-color: #1E293B;");
         pane.getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
 
         GridPane grid = new GridPane();

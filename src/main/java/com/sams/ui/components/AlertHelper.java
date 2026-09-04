@@ -53,6 +53,6 @@ public class AlertHelper {
         pane.getStylesheets().add(
             AlertHelper.class.getResource("/style.css").toExternalForm()
         );
-        pane.setStyle("-fx-background-color: #1a1a2e;");
+        pane.setStyle("-fx-background-color: #1E293B;");
     }
 }

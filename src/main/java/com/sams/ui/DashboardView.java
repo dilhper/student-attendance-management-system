@@ -33,7 +33,7 @@ public class DashboardView {
 
     private void buildUI() {
         root = new BorderPane();
-        root.setStyle("-fx-background-color: #1a1a2e;");
+        root.setStyle("-fx-background-color: #0F172A;");
 
         // ── Sidebar ──
         Sidebar sidebar = new Sidebar(currentUser, this::handleNavigation);
@@ -94,7 +94,7 @@ public class DashboardView {
         infoCard.getStyleClass().add("card");
 
         Label infoTitle = new Label("Quick Guide");
-        infoTitle.setStyle("-fx-text-fill: #e94560; -fx-font-size: 18px; -fx-font-weight: bold;");
+        infoTitle.setStyle("-fx-text-fill: #14B8A6; -fx-font-size: 18px; -fx-font-weight: bold;");
 
         Label infoText = new Label(
             currentUser.getRole().name().equals("ADMIN")
@@ -104,7 +104,7 @@ public class DashboardView {
                   + "and view attendance reports. Use the sidebar to navigate."
         );
         infoText.setWrapText(true);
-        infoText.setStyle("-fx-text-fill: #ccccdd; -fx-font-size: 14px; -fx-line-spacing: 4;");
+        infoText.setStyle("-fx-text-fill: #CBD5E1; -fx-font-size: 14px; -fx-line-spacing: 4;");
 
         infoCard.getChildren().addAll(infoTitle, infoText);
 

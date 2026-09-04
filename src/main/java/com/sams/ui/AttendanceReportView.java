@@ -48,8 +48,8 @@ public class AttendanceReportView {
         VBox filterCard = new VBox(12);
         filterCard.getStyleClass().add("card");
 
-        Label filterTitle = new Label("Filter Options");
-        filterTitle.setStyle("-fx-text-fill: #e94560; -fx-font-size: 16px; -fx-font-weight: bold;");
+        Label filterTitle = new Label("Report Filters");
+        filterTitle.setStyle("-fx-text-fill: #14B8A6; -fx-font-size: 16px; -fx-font-weight: bold;");
 
         HBox filtersRow1 = new HBox(16);
         filtersRow1.setAlignment(Pos.CENTER_LEFT);

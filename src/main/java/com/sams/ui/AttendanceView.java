@@ -74,7 +74,7 @@ public class AttendanceView {
         VBox.setVgrow(attendanceCard, Priority.ALWAYS);
 
         Label attTitle = new Label("Student Attendance");
-        attTitle.setStyle("-fx-text-fill: #e94560; -fx-font-size: 18px; -fx-font-weight: bold;");
+        attTitle.setStyle("-fx-text-fill: #14B8A6; -fx-font-size: 18px; -fx-font-weight: bold;");
 
         TableView<AttendanceRow> attTable = new TableView<>();
         attTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY_ALL_COLUMNS);
