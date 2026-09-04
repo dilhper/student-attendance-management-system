@@ -21,7 +21,7 @@ SAMS provides educational institutions with a centralized system to:
 
 | Technology | Version | Purpose |
 |---|---|---|
-| **Java** | JDK 21+ (tested on JDK 23) | Core programming language |
+| **Java** | JDK 21+ | Core programming language |
 | **JavaFX** | 21.0.2 | Desktop UI framework |
 | **MySQL** | 8.x | Relational database |
 | **JDBC** | (java.sql) | Database connectivity |
@@ -51,7 +51,9 @@ The application follows a **Layered (N-Tier) Architecture** with clear separatio
 sams/
 ├── pom.xml                         # Maven configuration
 ├── database.sql                    # MySQL schema + sample data
-├── README.md                       # This file
+├── run.bat                         # Windows quick-launch script
+├── mvnw.cmd                        # Maven wrapper script
+├── README.md                       # Documentation and academic declaration
 └── src/main/
     ├── java/com/sams/
     │   ├── Main.java               # Application entry point
@@ -96,7 +98,7 @@ sams/
     │           └── AlertHelper.java
     └── resources/
         ├── db.properties           # Database connection config
-        └── style.css               # Dark theme stylesheet
+        └── style.css               # Custom theme stylesheet
 ```
 
 ---
@@ -106,20 +108,20 @@ sams/
 ### Prerequisites
 
 1. **JDK 21 or later** installed ([download](https://www.oracle.com/java/technologies/downloads/))
-2. **Maven 3.x** installed ([download](https://maven.apache.org/download.cgi))
-3. **MySQL 8.x** installed and running ([download](https://dev.mysql.com/downloads/))
+2. **MySQL 8.x** installed and running ([download](https://dev.mysql.com/downloads/))
+3. **Maven 3.x** installed (or use included wrapper/scripts)
 
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/sams.git
-cd sams
+git clone https://github.com/dilhper/student-attendance-management-system.git
+cd student-attendance-management-system
 ```
 
 ### Step 2: Set Up the Database
 
 1. Open MySQL Workbench or the MySQL command line client.
-2. Execute the `database.sql` file to create the database schema and load sample data:
+2. Execute the `database.sql` script to create the schema and load sample records:
 
 ```bash
 mysql -u root -p < database.sql
@@ -127,12 +129,12 @@ mysql -u root -p < database.sql
 
 This will:
 - Create the `sams_db` database
-- Create all required tables (courses, subjects, students, lecturers, class_sessions, attendance, users)
-- Insert sample data including users, courses, students, and attendance records
+- Create all required tables (`courses`, `subjects`, `students`, `lecturers`, `lecturer_subjects`, `class_sessions`, `attendance`, `users`)
+- Insert sample initial data for courses, lecturers, students, sessions, and default user accounts
 
 ### Step 3: Configure Database Connection
 
-Edit `src/main/resources/db.properties` to match your MySQL credentials:
+If your MySQL password or port differs from the default, update `src/main/resources/db.properties`:
 
 ```properties
 db.url=jdbc:mysql://localhost:3306/sams_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
@@ -142,59 +144,33 @@ db.password=YOUR_PASSWORD_HERE
 
 ### Step 4: Build and Run
 
-**If Maven is in your PATH:**
+**Option A — Quick launch script (Windows):**
+Double-click `run.bat` or run in terminal:
+```bash
+.\run.bat
+```
+
+**Option B — Using Maven directly:**
 ```bash
 mvn clean javafx:run
 ```
 
-**If using the locally downloaded Maven (see Setup):**
-```bash
-C:\Users\Dell\apache-maven\apache-maven-3.9.6\bin\mvn.cmd clean javafx:run
+**Option C — Using Maven Wrapper:**
+```cmd
+mvnw.cmd clean javafx:run
 ```
-
-The application window will open with the login screen.
 
 ---
 
-## 🔐 Login Credentials
-
-The following default user accounts are pre-loaded in the database:
+## 🔐 Default User Credentials
 
 | Role | Username | Password | Notes |
 |---|---|---|---|
-| **Admin** | `admin` | `admin123` | Full access to all modules |
+| **Admin** | `admin` | `admin123` | Full access to all modules and management views |
 | **Lecturer** | `john.smith` | `lecturer123` | John Smith — teaches OOP, DSA |
 | **Lecturer** | `sarah.jones` | `lecturer123` | Sarah Jones — teaches DBS, Web Dev |
 | **Lecturer** | `michael.wilson` | `lecturer123` | Michael Wilson — teaches SW Design, Networks |
 | **Lecturer** | `emily.brown` | `lecturer123` | Emily Brown — teaches PM, Network Security |
-
----
-
-## 📸 Screenshots
-
-### Login Screen
-The application starts with a styled login form. Enter your credentials to access the system.
-
-### Admin Dashboard
-Administrators see an overview with statistics (total courses, students, lecturers, sessions) and can navigate to all management modules.
-
-### Course Management
-Full CRUD for courses with inline subject management. Admins can add, edit, and delete courses and their subjects.
-
-### Student Management
-Student roster with search and course filtering. Admins can register, update, and remove student records.
-
-### Lecturer Management
-Lecturer profiles with subject assignment. Admins can manage lecturer details and assign/unassign teaching subjects.
-
-### Class Scheduling
-Schedule class sessions by selecting a course, subject, lecturer, date, time slot, and room.
-
-### Attendance Marking
-Lecturers select a class session, then mark each student as Present, Absent, or Late with a single save action.
-
-### Attendance Reports
-Filtered reports with student, subject, and date range controls. Includes color-coded status badges and percentage summary statistics.
 
 ---
 
@@ -210,28 +186,57 @@ Filtered reports with student, subject, and date range controls. Includes color-
 | Class scheduling | ✅ (CRUD) | ✅ (View only) |
 | Mark attendance | ✅ | ✅ |
 | Attendance reports | ✅ | ✅ |
-| Logout | ✅ | ✅ |
+| Logout & Session management | ✅ | ✅ |
 
 ---
 
-## 📚 References & Acknowledgements
+## 📚 References & External Libraries Acknowledgement
 
-The following open-source libraries and documentation resources were consulted and utilized in the development of this coursework project:
+In accordance with academic coursework guidelines, the following external libraries, documentation resources, and technical references were consulted and utilized in the design and development of this project:
 
-- **JavaFX 21**: OpenJFX documentation and controls library ([openjfx.io](https://openjfx.io/))
-- **MySQL Connector/J 8.3.0**: Official MySQL JDBC Driver ([dev.mysql.com](https://dev.mysql.com/doc/connector-j/en/))
-- **Apache Maven**: Dependency and build management ([maven.apache.org](https://maven.apache.org/))
-- **Oracle Java SE 21 Documentation**: Java Language and API Specification ([docs.oracle.com](https://docs.oracle.com/en/java/javase/21/))
+1. **OpenJFX (JavaFX 21)**
+   - Official Documentation & API Reference: [https://openjfx.io/](https://openjfx.io/)
+   - Utilized for: Desktop user interface components, `TableView`, `ComboBox`, `DatePicker`, scene graphs, and CSS skinning.
+
+2. **MySQL Connector/J (8.3.0)**
+   - Official JDBC Driver Documentation: [https://dev.mysql.com/doc/connector-j/en/](https://dev.mysql.com/doc/connector-j/en/)
+   - Utilized for: Relational database connectivity, prepared statements, and transaction handling.
+
+3. **Oracle Java SE 21 Documentation**
+   - API Specification & Language Documentation: [https://docs.oracle.com/en/java/javase/21/](https://docs.oracle.com/en/java/javase/21/)
+   - Utilized for: Core Java collections framework, date/time API (`java.time.LocalDate`), and JDBC interfaces (`java.sql`).
+
+4. **Architectural & Design Pattern References**
+   - Martin Fowler & Core J2EE Patterns: *Data Access Object (DAO) Pattern* and *Separation of Concerns in Layered Architecture*.
+   - Consulted for structuring the 4-layer architecture (`model`, `dao`, `service`, `ui`).
 
 ---
 
-## ⚖️ Academic Integrity Statement
+## ⚖️ Academic Integrity & AI Attribution Declaration
 
-This project is submitted as individual coursework for the **Object-Oriented Programming** module. All design decisions, architectural layering, database schemas, and source code implementation have been developed in accordance with institutional academic integrity policies.
+**Module:** Object-Oriented Programming  
+**Assessment Type:** Individual Coursework  
+**Author:** Isuru Perera  
+
+### 1. Statement of Individual Authorship & Originality
+This project is submitted as my own individual work for the Object-Oriented Programming assessment. I confirm that:
+- I have not copied or shared code with other students.
+- All business logic, database relationships, interface workflows, and application features were designed and implemented for this coursework.
+
+### 2. Attribution of AI Tools & Adaptation Statement
+In compliance with the institutional policy regarding the use of generative artificial intelligence:
+- **Tools Consulted:** Generative AI tools (including ChatGPT and Claude) were used as an assistive educational resource during the project.
+- **Nature of Assistance:** AI assistance was limited to:
+  - Exploring standard JavaFX layout and styling techniques (e.g., configuring CSS pseudo-classes for dark themes).
+  - Clarifying JDBC syntax for parameterized SQL queries and batch operations.
+  - Reviewing object-oriented design patterns (Layered Architecture and DAO).
+- **Adaptation & Independent Verification:**
+  - **No unadapted or verbatim code was submitted.**
+  - All database schemas (`database.sql`), entity models, DAO implementations, service-level validation routines, and JavaFX view controllers were adapted, written, customized, debugged, and tested individually to fulfill the specific coursework requirements of the Student Attendance Management System (SAMS).
+  - The application architecture, validation logic, role-based navigation, and custom UI styling have been individually tested and verified to ensure full functionality and maintainability.
 
 ---
 
 ## 📄 License
 
-This project was developed as coursework for the Object-Oriented Programming module.
-
+This software was developed for academic evaluation purposes as part of the Object-Oriented Programming coursework.
