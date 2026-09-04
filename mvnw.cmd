@@ -31,6 +31,11 @@ if exist "C:\Program Files\Maven\bin\mvn.cmd" (
     goto runMaven
 )
 
+if exist "%USERPROFILE%\apache-maven\apache-maven-3.9.6\bin\mvn.cmd" (
+    set "MAVEN_CMD=%USERPROFILE%\apache-maven\apache-maven-3.9.6\bin\mvn.cmd"
+    goto runMaven
+)
+
 @REM Download Maven if not found
 echo Maven is not installed. Downloading Apache Maven 3.9.6...
 set "MVN_HOME=%USERPROFILE%\.m2\wrapper\apache-maven-3.9.6"

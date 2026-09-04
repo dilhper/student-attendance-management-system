@@ -43,7 +43,7 @@ public class LecturerView {
         root = new VBox(16);
         root.setPadding(new Insets(8));
 
-        // ── Header ──
+        // header with title and add button
         HBox header = new HBox(16);
         header.setAlignment(Pos.CENTER_LEFT);
 
@@ -59,13 +59,13 @@ public class LecturerView {
 
         header.getChildren().addAll(title, spacer, addBtn);
 
-        // ── Search ──
+        // search input field
         TextField searchField = new TextField();
         searchField.setPromptText("🔍  Search lecturers...");
         searchField.getStyleClass().add("search-field");
         searchField.setMaxWidth(400);
 
-        // ── Table ──
+        // table for lecturers
         table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY_ALL_COLUMNS);
         VBox.setVgrow(table, Priority.ALWAYS);

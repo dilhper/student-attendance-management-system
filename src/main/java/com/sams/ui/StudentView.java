@@ -41,7 +41,7 @@ public class StudentView {
         root = new VBox(16);
         root.setPadding(new Insets(8));
 
-        // ── Header ──
+        // header section with title and add button
         HBox header = new HBox(16);
         header.setAlignment(Pos.CENTER_LEFT);
 
@@ -57,7 +57,7 @@ public class StudentView {
 
         header.getChildren().addAll(title, spacer, addBtn);
 
-        // ── Filters Row ──
+        // filters row (search and course filter)
         HBox filters = new HBox(12);
         filters.setAlignment(Pos.CENTER_LEFT);
 
@@ -77,7 +77,7 @@ public class StudentView {
 
         filters.getChildren().addAll(searchField, courseFilter);
 
-        // ── Table ──
+        // student data table
         table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY_ALL_COLUMNS);
         VBox.setVgrow(table, Priority.ALWAYS);

@@ -43,7 +43,7 @@ public class ClassSessionView {
 
         boolean isAdmin = currentUser.getRole() == UserRole.ADMIN;
 
-        // ── Header ──
+        // header with title and button
         HBox header = new HBox(16);
         header.setAlignment(Pos.CENTER_LEFT);
 
@@ -62,7 +62,7 @@ public class ClassSessionView {
             header.getChildren().add(addBtn);
         }
 
-        // ── Table ──
+        // schedule sessions table
         table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY_ALL_COLUMNS);
         VBox.setVgrow(table, Priority.ALWAYS);

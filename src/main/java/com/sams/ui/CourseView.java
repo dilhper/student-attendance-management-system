@@ -41,7 +41,7 @@ public class CourseView {
         root = new VBox(16);
         root.setPadding(new Insets(8));
 
-        // ── Header ──
+        // header section
         HBox header = new HBox(16);
         header.setAlignment(Pos.CENTER_LEFT);
 
@@ -57,13 +57,13 @@ public class CourseView {
 
         header.getChildren().addAll(title, spacer, addBtn);
 
-        // ── Search ──
+        // search filter
         TextField searchField = new TextField();
         searchField.setPromptText("🔍  Search courses...");
         searchField.getStyleClass().add("search-field");
         searchField.setMaxWidth(400);
 
-        // ── Table ──
+        // courses table
         table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY_ALL_COLUMNS);
         VBox.setVgrow(table, Priority.ALWAYS);

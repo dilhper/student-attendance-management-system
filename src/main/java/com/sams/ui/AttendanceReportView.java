@@ -44,7 +44,7 @@ public class AttendanceReportView {
         Label subtitle = new Label("Filter and view attendance records across students, subjects, and dates.");
         subtitle.getStyleClass().add("page-subtitle");
 
-        // ── Filter Controls ──
+        // filter controls card
         VBox filterCard = new VBox(12);
         filterCard.getStyleClass().add("card");
 
@@ -123,14 +123,14 @@ public class AttendanceReportView {
 
         filterCard.getChildren().addAll(filterTitle, filtersRow1, filtersRow2);
 
-        // ── Summary Stats ──
+        // summary label row
         HBox statsRow = new HBox(16);
         statsRow.setAlignment(Pos.CENTER_LEFT);
         summaryLabel = new Label("Apply filters to view attendance data.");
         summaryLabel.setStyle("-fx-text-fill: #8888aa; -fx-font-size: 14px;");
         statsRow.getChildren().add(summaryLabel);
 
-        // ── Results Table ──
+        // results table setup
         table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY_ALL_COLUMNS);
         VBox.setVgrow(table, Priority.ALWAYS);
@@ -185,7 +185,7 @@ public class AttendanceReportView {
         // Load initial data (all records)
         applyFilters(null, null, null, null);
 
-        // ── Actions ──
+        // button actions and handlers
         applyBtn.setOnAction(e -> {
             Integer sId = studentFilter.getValue() != null && studentFilter.getValue().getStudentId() > 0
                 ? studentFilter.getValue().getStudentId() : null;

@@ -1,24 +1,14 @@
-/* ===========================================================
-   SAMS — Modern Academic Theme
-   Palette:
-     Primary / Brand:  #0D9488 (Teal)
-     Accent / Highlight: #F59E0B (Amber)
-     Background:       #0F172A (Deep Slate)
-     Sidebar:          #1E293B (Soft Slate)
-     Cards / Panels:   #1E293B (Slate Card)
-     Borders / Inputs: #334155 (Slate Border)
-     Text:             #F8FAFC (Slate White)
-     Muted text:       #94A3B8 (Slate Gray)
-   =========================================================== */
+/* SAMS - Student Attendance Management System Stylesheet */
+/* Colors: Teal (#0D9488), Slate (#1E293B), Amber (#F59E0B) */
 
-/* ---- Global ---- */
+/* Global styles */
 .root {
     -fx-font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
     -fx-background-color: #0F172A;
     -fx-font-size: 14px;
 }
 
-/* ---- Login View ---- */
+/* Login screen */
 .login-background {
     -fx-background-color: linear-gradient(to bottom right, #09111E, #0F172A, #132438);
 }
@@ -44,7 +34,7 @@
     -fx-font-size: 14px;
 }
 
-/* ---- Sidebar ---- */
+/* Sidebar navigation */
 .sidebar {
     -fx-background-color: #1E293B;
     -fx-padding: 0;
@@ -121,7 +111,7 @@
     -fx-font-weight: bold;
 }
 
-/* ---- Content Area ---- */
+/* Content layout */
 .content-area {
     -fx-background-color: #0F172A;
     -fx-padding: 32;
@@ -138,7 +128,7 @@
     -fx-font-size: 14px;
 }
 
-/* ---- Cards ---- */
+/* Cards and stats */
 .card {
     -fx-background-color: #1E293B;
     -fx-background-radius: 12;
@@ -175,7 +165,7 @@
     -fx-font-size: 28px;
 }
 
-/* ---- Buttons ---- */
+/* Buttons */
 .btn-primary {
     -fx-background-color: #0D9488;
     -fx-text-fill: #FFFFFF;
@@ -255,7 +245,7 @@
     -fx-text-fill: #14B8A6;
 }
 
-/* ---- Text Inputs ---- */
+/* Inputs */
 .text-field, .password-field, .text-area {
     -fx-background-color: #0F172A;
     -fx-text-fill: #F8FAFC;
@@ -285,7 +275,7 @@
     -fx-border-color: #14B8A6;
 }
 
-/* ---- ComboBox ---- */
+/* Dropdowns */
 .combo-box {
     -fx-background-color: #0F172A;
     -fx-border-color: #334155;
@@ -321,7 +311,7 @@
     -fx-background-color: #94A3B8;
 }
 
-/* ---- DatePicker ---- */
+/* Date Picker */
 .date-picker {
     -fx-background-color: #0F172A;
     -fx-border-color: #334155;
@@ -354,7 +344,7 @@
     -fx-text-fill: white;
 }
 
-/* ---- TableView ---- */
+/* Table View */
 .table-view {
     -fx-background-color: #1E293B;
     -fx-border-color: #334155;
@@ -420,7 +410,7 @@
     -fx-background-color: #14B8A6;
 }
 
-/* ---- ScrollBar ---- */
+/* Scrollbars */
 .scroll-bar {
     -fx-background-color: transparent;
 }
@@ -445,7 +435,7 @@
     -fx-padding: 0;
 }
 
-/* ---- Dialogs ---- */
+/* Dialogs */
 .dialog-pane {
     -fx-background-color: #1E293B;
     -fx-border-color: #334155;
@@ -485,7 +475,7 @@
     -fx-background-color: #14B8A6;
 }
 
-/* ---- Labels & Typography ---- */
+/* Labels */
 .label {
     -fx-text-fill: #E2E8F0;
 }
@@ -502,7 +492,7 @@
     -fx-padding: 0 0 4 2;
 }
 
-/* ---- Badges ---- */
+/* Status Badges */
 .badge-present {
     -fx-background-color: rgba(16, 185, 129, 0.2);
     -fx-text-fill: #34D399;
@@ -530,13 +520,13 @@
     -fx-font-weight: bold;
 }
 
-/* ---- Separator ---- */
+/* Separators */
 .separator .line {
     -fx-border-color: #334155;
     -fx-border-width: 1 0 0 0;
 }
 
-/* ---- Tooltip ---- */
+/* Tooltips */
 .tooltip {
     -fx-background-color: #1E293B;
     -fx-text-fill: #F8FAFC;
@@ -547,7 +537,7 @@
     -fx-font-size: 12px;
 }
 
-/* ---- CheckBox ---- */
+/* Checkboxes */
 .check-box {
     -fx-text-fill: #E2E8F0;
 }
@@ -565,7 +555,7 @@
     -fx-background-color: white;
 }
 
-/* ---- Tab Pane ---- */
+/* Tab Pane */
 .tab-pane .tab-header-area .tab-header-background {
     -fx-background-color: #151F30;
 }

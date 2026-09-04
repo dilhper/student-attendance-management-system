@@ -43,7 +43,7 @@ public class AttendanceView {
         Label subtitle = new Label("Select a class session, then mark each student's attendance.");
         subtitle.getStyleClass().add("page-subtitle");
 
-        // ── Session Selector ──
+        // session dropdown selection
         HBox selectorRow = new HBox(12);
         selectorRow.setAlignment(Pos.CENTER_LEFT);
 
@@ -66,7 +66,7 @@ public class AttendanceView {
 
         selectorRow.getChildren().addAll(sessionLabel, sessionBox);
 
-        // ── Attendance Table ──
+        // attendance table card
         VBox attendanceCard = new VBox(12);
         attendanceCard.getStyleClass().add("card");
         attendanceCard.setVisible(false);
@@ -119,7 +119,7 @@ public class AttendanceView {
 
         attendanceCard.getChildren().addAll(attTitle, attTable, saveBtn);
 
-        // ── Wire session selection ──
+        // handle session selection change
         ObservableList<AttendanceRow> rows = FXCollections.observableArrayList();
 
         sessionBox.valueProperty().addListener((obs, old, selected) -> {
@@ -153,7 +153,7 @@ public class AttendanceView {
             attendanceCard.setManaged(true);
         });
 
-        // ── Save action ──
+        // save attendance button action
         saveBtn.setOnAction(e -> {
             ClassSession selectedSession = sessionBox.getValue();
             if (selectedSession == null || rows.isEmpty()) {

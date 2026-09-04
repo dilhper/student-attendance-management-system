@@ -35,11 +35,11 @@ public class DashboardView {
         root = new BorderPane();
         root.setStyle("-fx-background-color: #0F172A;");
 
-        // ── Sidebar ──
+        // setup sidebar navigation
         Sidebar sidebar = new Sidebar(currentUser, this::handleNavigation);
         root.setLeft(sidebar);
 
-        // ── Content Area ──
+        // main content area
         contentArea = new StackPane();
         contentArea.getStyleClass().add("content-area");
         root.setCenter(contentArea);
@@ -73,7 +73,7 @@ public class DashboardView {
         Label welcomeSub = new Label("Student Attendance Management System — Overview");
         welcomeSub.getStyleClass().add("page-subtitle");
 
-        // ── Stats Cards ──
+        // dashboard statistics cards
         HBox statsRow = new HBox(20);
         statsRow.setAlignment(Pos.CENTER_LEFT);
 

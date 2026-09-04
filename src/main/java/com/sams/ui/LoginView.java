@@ -35,7 +35,7 @@ public class LoginView {
         root = new StackPane();
         root.getStyleClass().add("login-background");
 
-        // ── Login Card ──
+        // Login card container
         VBox card = new VBox(16);
         card.getStyleClass().add("login-card");
         card.setMaxWidth(420);
@@ -92,7 +92,7 @@ public class LoginView {
         hint.setWrapText(true);
         hint.setAlignment(Pos.CENTER);
 
-        // ── Login Action ──
+        // handle login submit
         Runnable doLogin = () -> {
             String username = userField.getText();
             String password = passField.getText();

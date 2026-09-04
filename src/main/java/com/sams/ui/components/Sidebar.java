@@ -32,7 +32,7 @@ public class Sidebar extends VBox {
     }
 
     private void buildUI() {
-        // ── Header / Brand ──
+        // header / brand section
         VBox header = new VBox(4);
         header.getStyleClass().add("sidebar-header");
 
@@ -44,7 +44,7 @@ public class Sidebar extends VBox {
 
         header.getChildren().addAll(brand, tagline);
 
-        // ── Navigation Items ──
+        // navigation menu items
         VBox nav = new VBox(2);
         nav.setPadding(new Insets(12, 0, 12, 0));
 
@@ -87,11 +87,11 @@ public class Sidebar extends VBox {
 
         nav.getChildren().add(createNavButton("📋  Attendance Reports", "reports"));
 
-        // ── Spacer ──
+        // spacer
         Region spacer = new Region();
         VBox.setVgrow(spacer, Priority.ALWAYS);
 
-        // ── User Info + Logout ──
+        // user info and logout
         VBox userBox = new VBox(4);
         userBox.getStyleClass().add("sidebar-user-box");
 
